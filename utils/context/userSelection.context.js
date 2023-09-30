@@ -14,12 +14,3 @@ export function useUserSelection() {
   }
   return context;
 }
-// //
-// import React from "react";
-// import { DEFAULT_STATE } from "..";
-
-// const userSelectionContext = React.createContext({
-//   selectedValue: DEFAULT_STATE,
-//   handleChange: () => {},
-// });
-// export default userSelectionContext;
