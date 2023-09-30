@@ -5,57 +5,56 @@ import Layout from "../../components/layout";
 import { DEFAULT_STATE } from "../../utils";
 import { UserSelectionProvider } from "../../utils/context/userSelection.context";
 import { SelectionReducer } from "../../utils/context/userSelectionReducer";
-import CompWindow from "./memoComponent";
-const widowType = [
-  {
-    inputName: "type",
-    name: "palseten",
-    id: "pal1",
-    img: "/images/force.jpeg",
-    value: "pal1",
-  },
-  {
-    inputName: "type",
-    name: "royal",
-    id: "rol1",
-    img: "/images/force.jpeg",
-    value: "rol1",
-  },
-];
-const widowBox = [
-  {
-    inputName: "withBox",
-    name: "with Box",
-    id: "box1",
-    img: "/images/force.jpeg",
-    value: 1,
-  },
-  {
-    inputName: "withBox",
-    name: "without Box",
-    id: "box2",
-    img: "/images/force.jpeg",
-    value: 0,
-  },
-];
-const widowFrame = [
-  {
-    inputName: "withFrame",
-    name: "with Frame",
-    id: "frame1",
-    img: "/images/force.jpeg",
-    value: 1,
-  },
-  {
-    inputName: "withFrame",
-    name: "without Frame",
-    id: "frame2",
-    img: "/images/force.jpeg",
-    value: 0,
-  },
-];
-
+import CompWindow from "../../components/WindowTypesMemo/memoComponent";
 const WindowTypes = () => {
+  const widowType = [
+    {
+      inputName: "type",
+      name: "palseten",
+      id: "pal1",
+      img: "/images/force.jpeg",
+      value: "pal1",
+    },
+    {
+      inputName: "type",
+      name: "royal",
+      id: "rol1",
+      img: "/images/force.jpeg",
+      value: "rol1",
+    },
+  ];
+  const widowBox = [
+    {
+      inputName: "withBox",
+      name: "with Box",
+      id: "box1",
+      img: "/images/force.jpeg",
+      value: 1,
+    },
+    {
+      inputName: "withBox",
+      name: "without Box",
+      id: "box2",
+      img: "/images/force.jpeg",
+      value: 0,
+    },
+  ];
+  const widowFrame = [
+    {
+      inputName: "withFrame",
+      name: "with Frame",
+      id: "frame1",
+      img: "/images/force.jpeg",
+      value: 1,
+    },
+    {
+      inputName: "withFrame",
+      name: "without Frame",
+      id: "frame2",
+      img: "/images/force.jpeg",
+      value: 0,
+    },
+  ];
   const [state, dispatch] = useReducer(SelectionReducer, DEFAULT_STATE);
   const router = useRouter();
   const [windowNo, setWindowNo] = useState(null);
@@ -101,16 +100,12 @@ const WindowTypes = () => {
             min="1"
             required={true}
           />
-          {useMemo(
-            () => (
-              <>
-                <CompWindow data={widowType} stateKey="type" />
-                <CompWindow data={widowFrame} stateKey="withFrame" />
-                <CompWindow data={widowBox} stateKey="withBox" />
-              </>
-            ),
-            []
-          )}
+
+          <>
+            <CompWindow data={widowType} stateKey="type" />
+            <CompWindow data={widowFrame} stateKey="withFrame" />
+            <CompWindow data={widowBox} stateKey="withBox" />
+          </>
         </UserSelectionProvider>
 
         <button

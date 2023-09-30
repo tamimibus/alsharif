@@ -1,9 +1,8 @@
 import Head from "next/head";
 import Header from "./Header.js";
 // import Footer from './Footer.jsx'
+import React, { useState } from "react";
 import style from "../styles/Header.module.css";
-import React, { useEffect, useState } from "react";
-import { UserSelectionProvider } from "../utils/context/userSelection.context.js";
 const Layout = (props) => {
   const [navBg, setNavBg] = useState(false);
   // const isHome = props.name === 'Homepage' ? true : false;

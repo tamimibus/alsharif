@@ -7,7 +7,7 @@ const CardWithImage = ({ data, title, onChange, windowSelections }) => {
     <>
       <p className={style.title}>{title}</p>
       <div className={style.container}>
-        {data.map((item) => {
+        {data?.map?.((item) => {
           return (
             // <div>
 
