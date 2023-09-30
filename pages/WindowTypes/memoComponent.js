@@ -1,11 +1,6 @@
-import { memo, useCallback, useReducer } from "react";
+import { memo } from "react";
 import CardWithImage from "../../components/cardWithImage";
-import { DEFAULT_STATE } from "../../utils";
-import {
-  UserSelectionProvider,
-  useUserSelection,
-} from "../../utils/context/userSelection.context";
-import { SelectionReducer } from "../../utils/context/userSelectionReducer";
+import { useUserSelection } from "../../utils/context/userSelection.context";
 
 const WindowMemo = memo(({ onChange, windowSelections, data }) => {
   return (
@@ -30,11 +25,6 @@ const CompWindow = ({ data, stateKey }) => {
       onChange={(e) => handleChange(e.target.name, e.target.value)}
       windowSelections={windowSelections}
     />
-    // <WindowMemo
-    //   onChange={handleChange}
-    //   windowSelections={windowSelections}
-    //   data={data}
-    // />
   );
 };
 export default CompWindow;

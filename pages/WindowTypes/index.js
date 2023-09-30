@@ -1,25 +1,11 @@
-import CardWithImage from "../../components/cardWithImage";
-import Layout from "../../components/layout";
-import React, {
-  useState,
-  useCallback,
-  memo,
-  useReducer,
-  useContext,
-  useMemo,
-} from "react";
-import { useRef } from "react";
-import CompWindow from "./memoComponent";
-import { DEFAULT_STATE } from "../../utils";
-import { SelectionReducer } from "../../utils/context/userSelectionReducer";
-import {
-  UserSelection,
-  UserSelectionProvider,
-  useUserSelection,
-} from "../../utils/context/userSelection.context";
 import { useRouter } from "next/router";
-import Calculate from "../Calculate";
+import React, { useCallback, useMemo, useReducer, useState } from "react";
 import InputField from "../../components/inputField";
+import Layout from "../../components/layout";
+import { DEFAULT_STATE } from "../../utils";
+import { UserSelectionProvider } from "../../utils/context/userSelection.context";
+import { SelectionReducer } from "../../utils/context/userSelectionReducer";
+import CompWindow from "./memoComponent";
 const widowType = [
   {
     inputName: "type",
