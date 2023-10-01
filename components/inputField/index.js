@@ -10,7 +10,6 @@ const InputField = ({
   value = "",
   ...rest
 }) => {
-  console.log("checking==>valuevalue", value);
   return (
     <>
       {index ? <h2>{index}- </h2> : null}

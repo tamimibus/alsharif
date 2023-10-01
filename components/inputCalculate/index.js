@@ -5,25 +5,22 @@ import InputField from "../inputField";
 import { useRouter } from "next/router";
 
 const InputCalculate = () => {
-  const total = useRef([]);
   const [area, setArea] = useState("");
+  const [totalCost, setTotalCost] = useState({ cost: 0, area: 0 });
   const router = useRouter();
   const newArray = useRef([]);
   //pal1:withFrame:{withBox}
   const priceSchema = {
-    pal1: { 0: { 0: 1, 1: 2 }, 1: { 0: 3, 1: 4 } },
-    rol1: { 0: { 0: 5, 1: 6 }, 1: { 0: 7, 1: 8 } },
+    pal1: { 0: { 0: 60, 1: 65 }, 1: { 0: 70, 1: 75 } },
+    rol1: { 0: { 0: 80, 1: 85 }, 1: { 0: 90, 1: 95 } },
   };
   const data = router.query;
-  console.log("checking==>datadata", data);
-  console.log(
-    "checking==>datadatapriceSchema",
-    priceSchema?.[data?.type]?.[data?.withFrame]?.[data?.withBox]
-  );
+
   useEffect(() => {
-    Array.from({ length: +data.windowNo }, (_, index) => {
+    if (newArray.current.length >= data.windowNo) return;
+    Array?.from({ length: +data.windowNo }, (_, index) => {
       newArray.current = [
-        ...newArray.current,
+        ...newArray?.current,
         { id: index + 1, name: `s${index + 1}` },
       ];
     });
@@ -44,48 +41,63 @@ const InputCalculate = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     let totoalarea = 0;
-    let fullValues = Object?.values(area)?.map?.((item) => {
-      console.log("checking==>fullValues", item);
+    Object?.values(area)?.forEach?.((item) => {
       if ((item.width / 100) * (item.height / 100) < 0.75)
         totoalarea = totoalarea + 0.75;
       else totoalarea = totoalarea + (item.width / 100) * (item.height / 100);
     });
-    console.log("checking==>totoalarea", totoalarea);
+    const cost =
+      totoalarea *
+      priceSchema?.[data?.type]?.[data?.withFrame]?.[data?.withBox];
+    setTotalCost({ cost, area: totoalarea });
   };
-  // console.log("checking==>area", area);
-  // console.log("checking==>object", Object.keys(area), Object.values(area));
 
+  const finalCost = (
+    <div
+      style={{
+        background: "white",
+        width: "100%",
+        padding: "25px",
+        textAlign: "center",
+      }}
+    >
+      <p style={{ color: "black" }}>Cost: {totalCost.cost} JOD</p>
+
+      <p style={{ color: "black", paddingBlock: "20px" }}>
+        Total Area: {totalCost.area} m
+      </p>
+      <p style={{ color: "black" }}>please add 35 JOD per Motor</p>
+    </div>
+  );
   return (
     <Layout className={style.container}>
-      {/* <div>total area: {areaTotal}</div>
-      <div>total cost: {areaCost}</div> */}
-      {newArray.current.map((item) => {
+      {newArray?.current?.map?.((item, index) => {
         return (
           <div className={style.conversions} key={item.id}>
+            <span>{index + 1} - </span>
             <InputField
               type="number"
               id={item.name}
               className={style.numbers}
               name="width"
-              placeholder="please enter the width"
+              placeholder="width (cm)"
               onChange={onChange}
               value={area[item.name]?.width || ""}
             />
 
-            <label>width (cm) * height (cm)</label>
             <InputField
               type="number"
               id={item.name}
               className={style.numbers}
               name="height"
-              placeholder="please enter the height"
+              placeholder=" height (cm)"
               onChange={onChange}
               value={area[item.name]?.height || ""}
             />
-            <label>output</label>
           </div>
         );
       })}
+      {totalCost.cost ? finalCost : null}
       <button
         type="text"
         style={{

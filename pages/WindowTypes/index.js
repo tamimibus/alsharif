@@ -57,7 +57,7 @@ const WindowTypes = () => {
   ];
   const [state, dispatch] = useReducer(SelectionReducer, DEFAULT_STATE);
   const router = useRouter();
-  const [windowNo, setWindowNo] = useState(null);
+  const [windowNo, setWindowNo] = useState("");
   const handleChange = useCallback((name, newValue) => {
     dispatch({
       key: name,
@@ -65,13 +65,6 @@ const WindowTypes = () => {
     });
   }, []);
 
-  // const handleChange = (name, newValue) => {
-  //   console.log("checking==>handleChange", name);
-  //   dispatch({
-  //     key: name,
-  //     value: newValue,
-  //   });
-  // };
   const onChange = (e) => {
     setWindowNo(Number(e.target.value));
   };
@@ -86,12 +79,10 @@ const WindowTypes = () => {
   };
   return (
     <Layout>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} style={{ marginInline: "2%" }}>
         <UserSelectionProvider value={{ state, handleChange }}>
           <InputField
             type={"number"}
-            // id={}
-
             name={"windowNo"}
             placeholder={"please enter the window number"}
             onChange={onChange}
