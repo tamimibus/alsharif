@@ -64,7 +64,7 @@ const InputCalculate = () => {
       <p style={{ color: "black" }}>Cost: {totalCost.cost} JOD</p>
 
       <p style={{ color: "black", paddingBlock: "20px" }}>
-        Total Area: {totalCost.area} m
+        Total Area: {totalCost.area} m<sup>2</sup>
       </p>
       <p style={{ color: "black" }}>please add 35 JOD per Motor</p>
     </div>
