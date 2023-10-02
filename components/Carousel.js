@@ -1,8 +1,6 @@
 import Image from "next/image";
-import style from "./carousel.module.css";
-import Link from "next/link";
-import Router from "next/router";
 import { useState } from "react";
+import style from "./carousel.module.css";
 
 const Carousel = () => {
   const [slideIndex, setSlideIndex] = useState(1);
@@ -13,9 +11,6 @@ const Carousel = () => {
     } else {
       setSlideIndex((preState) => preState + n);
     }
-    // setSlideIndex((preState) =>
-    //   (preState + n)||() > imagesSlider.length ? 1 : preState + n
-    // );
   }
 
   const imagesSlider = [
@@ -63,24 +58,4 @@ const Carousel = () => {
 };
 export default Carousel;
 {
-  /* /// */
-}
-{
-  /* <div className={style.slider}>
-      <div className={style.slides}>
-        {imagesSlider.map((image) => {
-          return (
-            <div key={image.id} className={style.carouselItem}>
-              <Image
-                src={image.url}
-                layout="fill"
-                objectFit="cover"
-                alt={image.alt}
-              />
-            </div>
-          );
-        })}
-      </div>
-      <div className={style.overlay}></div>
-    </div> */
 }
