@@ -2,18 +2,10 @@ import React from "react";
 import style from "./switcher.module.css";
 
 const Switcher = ({ id, onChange, inputName, value, windowSelections }) => {
-  console.log(
-    "checking==>value",
-    value.toString(),
-    "windowSelections[inputName].toString()",
-    windowSelections[inputName].toString(),
-    windowSelections
-  );
   return (
     <label className={style.switch}>
       <input
         id={id}
-        // defaultChecked={windowSelections.current[inputName] === value}
         checked={windowSelections[inputName].toString() === value.toString()}
         type="checkbox"
         value={value}
@@ -24,14 +16,11 @@ const Switcher = ({ id, onChange, inputName, value, windowSelections }) => {
         <div className={style.circle}>
           <svg
             className={style.cross}
-            // xml:space="preserve"
-            // style="enable-background:new 0 0 512 512"
             viewBox="0 0 365.696 365.696"
             y="0"
             x="0"
             height="6"
             width="6"
-            // xmlns:xlink="http://www.w3.org/1999/xlink"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -45,14 +34,11 @@ const Switcher = ({ id, onChange, inputName, value, windowSelections }) => {
           </svg>
           <svg
             className={style.checkmark}
-            // xml:space="preserve"
-            // style="enable-background:new 0 0 512 512"
             viewBox="0 0 24 24"
             y="0"
             x="0"
             height="10"
             width="10"
-            // xmlns:xlink="http://www.w3.org/1999/xlink"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
           >

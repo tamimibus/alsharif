@@ -10,7 +10,7 @@ const Footer = () => {
         <div className={style.container}>
           <div className={style.row}>
             <div className={` ${style.text} ${style.item}`}>
-              <h3>Company Name</h3>
+              <h3>مؤسسة الشريف الصناعية</h3>
               <p>
                 Praesent sed lobortis mi. Suspendisse vel placerat ligula.
                 Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis
@@ -47,7 +47,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <p className={`${style.copyright}`}>Company Name © 2018</p>
+          <p className={`${style.copyright}`}>مؤسسة الشريف الصناعية © 2023</p>
         </div>
       </footer>
     </div>
