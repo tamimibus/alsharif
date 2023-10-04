@@ -80,7 +80,7 @@ const InputCalculate = () => {
               id={item.name}
               className={style.numbers}
               name="width"
-              placeholder="width (cm)"
+              placeholder="العرض (سم)"
               onChange={onChange}
               value={area[item.name]?.width || ""}
             />
@@ -90,7 +90,7 @@ const InputCalculate = () => {
               id={item.name}
               className={style.numbers}
               name="height"
-              placeholder=" height (cm)"
+              placeholder=" الارتفاع (سم)"
               onChange={onChange}
               value={area[item.name]?.height || ""}
             />

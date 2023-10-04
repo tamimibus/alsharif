@@ -10,14 +10,14 @@ const WindowTypes = () => {
   const widowType = [
     {
       inputName: "type",
-      name: "palseten",
+      name: "مقطع فلسطيني",
       id: "pal1",
       img: "/images/force.jpeg",
       value: "pal1",
     },
     {
       inputName: "type",
-      name: "royal",
+      name: "مقطع رويال",
       id: "rol1",
       img: "/images/force.jpeg",
       value: "rol1",
@@ -26,14 +26,14 @@ const WindowTypes = () => {
   const widowBox = [
     {
       inputName: "withBox",
-      name: "with Box",
+      name: "مع صندوق",
       id: "box1",
       img: "/images/force.jpeg",
       value: 1,
     },
     {
       inputName: "withBox",
-      name: "without Box",
+      name: "بدون صندوق",
       id: "box2",
       img: "/images/force.jpeg",
       value: 0,
@@ -42,14 +42,14 @@ const WindowTypes = () => {
   const widowFrame = [
     {
       inputName: "withFrame",
-      name: "with Frame",
+      name: "مع  اطار",
       id: "frame1",
       img: "/images/force.jpeg",
       value: 1,
     },
     {
       inputName: "withFrame",
-      name: "without Frame",
+      name: " بدون اطار",
       id: "frame2",
       img: "/images/force.jpeg",
       value: 0,
@@ -84,7 +84,7 @@ const WindowTypes = () => {
           <InputField
             type={"number"}
             name={"windowNo"}
-            placeholder={"please enter the window number"}
+            placeholder={" عدد الشبابيك"}
             onChange={onChange}
             value={windowNo}
             max="20"

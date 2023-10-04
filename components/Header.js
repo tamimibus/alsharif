@@ -21,7 +21,7 @@ const Navbar = ({}) => {
         {router.route !== "/Calculate" ? (
           <Link href={CustomerInformationRoute}>
             <button className={style.codepenButton}>
-              <span>cost of windows</span>
+              <span>تكلفة الشبابيك</span>
             </button>
           </Link>
         ) : null}

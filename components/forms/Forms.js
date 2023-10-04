@@ -34,7 +34,7 @@ const Forms = () => {
         />
         <div className={style.cut}></div>
         <label htmlFor="name" className={style.placeholder}>
-          First name
+          الاسم
         </label>
       </div>
       <div className={`${style.inputContainer} ${style.ic2}`}>
@@ -48,7 +48,7 @@ const Forms = () => {
         />
         <div className={style.cut}></div>
         <label htmlFor="phoneNumber" className={style.placeholder}>
-          Last name
+          رقم الهاتف
         </label>
       </div>
       <Dropdown
