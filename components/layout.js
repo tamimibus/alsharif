@@ -4,6 +4,7 @@ import Header from "./Header.js";
 import React from "react";
 import style from "../styles/Header.module.css";
 import Footer from "./footer";
+import { Analytics } from "@vercel/analytics/react";
 const Layout = (props) => {
   return (
     <>
@@ -19,6 +20,7 @@ const Layout = (props) => {
       </div>
 
       <Footer />
+      <Analytics />
     </>
   );
 };
